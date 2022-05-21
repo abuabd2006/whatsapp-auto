@@ -42,7 +42,7 @@ def reply():
                 response.message("https://play.google.com/store/apps/details?id=com.batmun.android.engdept")
 
         elif option == 4:
-                 response.message("https://drive.google.com/file/d/1MyvMh4XgUIToz2PEmf5ZUccrv1Oim0ZC/view?usp=sharing")
+                 response.message("https://gofile.io/d/spgQVi")
         else:
             response.message("المعذرة، لم أفهم ما تريد، فضلاً اختر رقماً من القائمة أعلاه")
             users.update_one({"number":number},{"$push":{"messages":{"content":content,"date":datetime.now()}}})
