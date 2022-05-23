@@ -59,28 +59,24 @@ def reply():
                 "1️⃣ بيانات الإتصال \n2️⃣ تقديم الطلبات \n3️⃣ تحميل تطبيق خدمات قسم رقابة المباني ( لأجهزة أندرويد)\n4️⃣ الإطلاع على دليل الخدمات لإدارة الهندسة")
         elif option == 1:
             response["reply"]+='\n' +("https://docs.google.com/forms/d/1UoOdVDdMeh-6in1XbUY22nGOILGfHyYCfBOkmeUVXNQ/edit?usp=sharing")
-            users.update_one(
-                {"number": number}, {"$set": {"status": "ordering"}})
+            
         elif option == 2:
             response["reply"]+='\n' +("https://docs.google.com/forms/d/1AI9fVB6t3oZqvpjA28CtQJqP_iPrDh9J6bBpRfS1FMo/edit?usp=sharing")
-            users.update_one(
-                {"number": number}, {"$set": {"status": "ordering"}})
+   
         elif option == 3:
             response["reply"]+='\n' +("https://docs.google.com/forms/d/1Kwwn6YURr4p8TMO57deGLqjeg7bsBlJHsxfVwX_SEak/edit?usp=sharing")
-            users.update_one(
-                {"number": number}, {"$set": {"status": "ordering"}})
+            
         elif option == 4:
             response["reply"]+='\n' +("https://docs.google.com/forms/d/1-jXwWZF6CDo6mwgvKhfdgjJAH2Pi8OQNs1Za7WSvM4M/edit?usp=sharing")
-            users.update_one(
-                {"number": number}, {"$set": {"status": "ordering"}})
+           
         elif option == 5:
             response["reply"]+='\n' +("https://docs.google.com/forms/d/e/1FAIpQLSdM7lW3YeSvp99_EOGfxEzGSuQRCJbE4VIIFIQszflAzwPHCQ/viewform")
-            users.update_one(
-                {"number": number}, {"$set": {"status": "ordering"}})
+         
         else:
             response["reply"]+='\n' +("المعذرة، لم أفهم ما تريد، فضلاً اختر رقماً من اقائمة أعلاه")
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
+            response["reply"]+='\n' +("1️⃣ بيانات الإتصال \n2️⃣ تقديم الطلبات \n3️⃣ تحميل تطبيق خدمات قسم رقابة المباني ( لأجهزة أندرويد)\n4️⃣ الإطلاع على دليل الخدمات لإدارة الهندسة")
 
     return str(response)
 if __name__ == "__main__":
