@@ -73,10 +73,10 @@ def reply():
             response["reply"]+='\n' +("https://docs.google.com/forms/d/e/1FAIpQLSdM7lW3YeSvp99_EOGfxEzGSuQRCJbE4VIIFIQszflAzwPHCQ/viewform")
          
         else:
-            response["reply"]+='\n' +("المعذرة، لم أفهم ما تريد، فضلاً اختر رقماً من اقائمة أعلاه")
+            response["reply"]+='\n' +("المعذرة، لم أفهم ما تريد، فضلاً اختر رقماً من القائمة أدناه")
             users.update_one(
-                {"number": number}, {"$set": {"status": "main"}})
-            response["reply"]+='\n' +("1️⃣ بيانات الإتصال \n2️⃣ تقديم الطلبات \n3️⃣ تحميل تطبيق خدمات قسم رقابة المباني ( لأجهزة أندرويد)\n4️⃣ الإطلاع على دليل الخدمات لإدارة الهندسة")
+                {"number": number}, {"$set": {"status": "ordering"}},{"$push":{"messages":{"content":content,"date":datetime.now()}}})
+            response["reply"]+='\n' +("1️⃣ طلب تدقيق إنشائي\n2️⃣ طلب شهادة نسبة إنجاز\n3️⃣ طلب شهادة إنجاز\n4️⃣ طلب شهادة توصيل خدمات\n5️⃣ طلب تقرير موقع للمشاريع قيد الإنشاء\n6️⃣ العودة إلى القائمة الرئيسية")
 
     return str(response)
 if __name__ == "__main__":
